@@ -11,10 +11,11 @@ int _printf(const char *format, ...)
 		{"%c", print_char}, {"%s", print_string}, {"%%", print_percent}
 	};
 	va_list args;
-	int i, j, len = 0;
+	int i, len = 0;
+	unsigned long int j;
 
 	va_start(args, format);
-	if (format == '\0' || (format[0] == '%' && format[1] == '\0'))
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
 	for (i = 0; format[i] != '\0'; i++)
