@@ -5,15 +5,21 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-
+/**
+ * struct module_handle - convertion specifiers matching
+ * @module: str that holds spec
+ * @function: points to the fun related to spec
+*/
 typedef struct module_handle
 {
 	char *module;
-	int (* function) ();
-}m_handle;
+	int (*function)();
+} m_handle;
 
 int _printf(const char *format, ...);
-int _putchar(char);
+int _putchar(char c);
+int print_char(va_list arg);
+int print_present(void);
 
 
 #endif
