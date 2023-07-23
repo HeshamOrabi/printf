@@ -8,7 +8,7 @@
 int _printf(const char *format, ...)
 {
 	m_handle conv[] = {
-		{"%c", print_char}, {"%s", print_string}, {"%%", print_present}
+		{"%c", print_char}, {"%s", print_string}, {"%%", print_percent}
 	};
 	va_list args;
 	int i, j, len = 0;

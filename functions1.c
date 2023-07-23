@@ -46,7 +46,7 @@ int print_string(va_list args)
  * print_present - print % to stdout
  * Return: 1
 */
-int print_present(void)
+int print_percent(void)
 {
 	_putchar('%');
 	return (1);
