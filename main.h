@@ -6,13 +6,14 @@
 #include <unistd.h>
 
 
-typeof struct module_handle
+typedef struct module_handle
 {
 	char *module;
 	int (* function) ();
 }m_handle;
 
 int _printf(const char *format, ...);
+int _putchar(char);
 
 
 #endif
