@@ -13,6 +13,7 @@ typedef struct module_handle
 }m_handle;
 
 int _printf(const char *format, ...);
+int _putchar(char);
 
 
 #endif
