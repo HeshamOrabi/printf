@@ -25,7 +25,7 @@ int print_char(va_list args)
 }
 
 /**
- * print_string - function to print a str
+ * print_str - function to print a str
  * @args: an argument list
  * Return: length of str
 */
@@ -43,7 +43,7 @@ int print_str(va_list args)
 }
 
 /**
- * print_present - print % to stdout
+ * print_percent - print % to stdout
  * Return: 1
 */
 int print_percent(void)
