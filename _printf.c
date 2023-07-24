@@ -7,12 +7,9 @@
 */
 int _printf(const char *format, ...)
 {
-	m_handle conv[] = {
-		{"%c", print_char}, {"%s", print_string}, {"%%", print_percent}
-	};
+	int i, lenAfterCallFunc = 0, overAllLen = 0, specifier = 0;
 	va_list args;
-	int i, len = 0;
-	unsigned long int j;
+	char buffer[1024];
 
 	va_start(args, format);
 	if (!format || (format[0] == '%' && !format[1]))
@@ -22,29 +19,31 @@ int _printf(const char *format, ...)
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] == conv[0].module[0])
+		if (format[i] != '%')
 		{
-			for (j = 0; j < (sizeof(conv) / sizeof(conv[j])); j++)
-			{
-				if (format[i + 1] == conv[j].module[1])
-				{
-					len += conv[j].function(args);
-					i += 1;
-					break;
-				}
-			}
-			if (j == sizeof(conv) / sizeof(conv[j]))
-			{
-				va_end(args);
-				return (-1);
-			}
+			buffer[specifier++] = format[i];
+			if (specifier == 1024)
+				modifiedPutChar(buffer, &specifier);
+
+			overAllLen++;
 		}
 		else
 		{
-			_putchar(format[i]);
-			len++;
+			modifiedPutChar(buffer, &specifier);
+			i++;
+
+			lenAfterCallFunc = handelPrint(format, &i, args);
+
+			if (lenAfterCallFunc == -1)
+				return (-1);
+
+			overAllLen += lenAfterCallFunc;
 		}
 	}
+
+	modifiedPutChar(buffer, &specifier);
+
 	va_end(args);
-	return (len);
+
+	return (overAllLen);
 }
