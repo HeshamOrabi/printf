@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 {
 	int i, lenAfterCallFunc = 0, overAllLen = 0, specifier = 0;
 	va_list args;
-	char buffer[1024];
+	char buffer[BUFF];
 
 	va_start(args, format);
 	if (!format || (format[0] == '%' && !format[1]))
@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			buffer[specifier++] = format[i];
-			if (specifier == 1024)
+			if (specifier == BUFF)
 				modifiedPutChar(buffer, &specifier);
 
 			overAllLen++;

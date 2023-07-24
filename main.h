@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#define BUFF 1024
+
 /**
  * struct module_handle - convertion specifiers matching
  * @module: str that holds spec
@@ -25,5 +27,6 @@ int print_char(va_list args);
 int print_str(va_list args);
 char *int_to_char(int num);
 int print_int(va_list args);
+int print_b(va_list args);
 
 #endif

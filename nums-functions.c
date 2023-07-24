@@ -1,11 +1,11 @@
 #include "main.h"
+
 /**
  * int_to_char - function that convert integer
  * to string
  * @num: an integer numer
  * Return: returns pointer to string
  */
-
 char *int_to_char(int num)
 {
 	int i = 0;
@@ -46,7 +46,6 @@ char *int_to_char(int num)
  * @args: an argument list
  * Return: returns length of integrs
  */
-
 int print_int(va_list args)
 {
 	int num, i;
@@ -60,4 +59,31 @@ int print_int(va_list args)
 		_putchar(s[i]);
 
 	return (i);
+}
+
+/**
+ * print_b - function that prints binary
+ * @args: an argument list
+ * Return: returns length of integrs
+*/
+int print_b(va_list args)
+{
+	int i, arr[32], len = 0;
+	unsigned int n;
+
+	n = va_arg(args, unsigned int);
+
+	for (i = 0; n > 0; i++)
+	{
+		arr[i] = n % 2;
+		n = n / 2;
+		len++;
+	}
+
+	for (i = i - 1; i >= 0; i--)
+	{
+		_putchar(arr[i] + '0');
+	}
+
+	return (len);
 }
