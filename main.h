@@ -17,10 +17,11 @@ typedef struct module_handle
 } m_handle;
 
 int _printf(const char *format, ...);
+void modifiedPutChar(char buffer[], int *specifier);
+int handelPrint(const char *format, int *index, va_list args);
 int _putchar(char c);
-int print_char(va_list arg);
-int print_string(va_list args);
 int print_percent(void);
-
+int print_char(va_list args);
+int print_str(va_list args);
 
 #endif

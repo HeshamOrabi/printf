@@ -29,7 +29,7 @@ int print_char(va_list args)
  * @args: an argument list
  * Return: length of str
 */
-int print_string(va_list args)
+int print_str(va_list args)
 {
 	int i;
 	char *str;
