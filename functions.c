@@ -51,7 +51,3 @@ int print_percent(void)
 	_putchar('%');
 	return (1);
 }
-
-/**
- * print_int = prints integer number
- *
