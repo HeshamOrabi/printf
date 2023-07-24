@@ -23,5 +23,7 @@ int _putchar(char c);
 int print_percent(void);
 int print_char(va_list args);
 int print_str(va_list args);
+char *int_to_char(int num);
+int print_int(va_list args);
 
 #endif
