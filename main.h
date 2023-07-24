@@ -12,7 +12,7 @@
 */
 typedef struct module_handle
 {
-	char *module;
+	char module;
 	int (*function)();
 } m_handle;
 
