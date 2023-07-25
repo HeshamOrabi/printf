@@ -26,7 +26,7 @@ int handelPrint(const char *format, int *index, va_list args)
 	m_handle conv[] = {
 		{'c', print_char}, {'s', print_str}, {'%', print_percent},
 		{'i', print_int}, {'d', print_int}, {'b', print_b},
-		{'p', print_p}, {'\0', NULL}
+		{'p', print_p}, {'r', print_r}, {'\0', NULL}
 	};
 	int i, UnkownSpecifierLen = 0;
 

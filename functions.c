@@ -56,3 +56,29 @@ int print_percent(void)
 	_putchar('%');
 	return (1);
 }
+
+/**
+ * print_r - a function that prints reverse string
+ * @args: an argument list
+ * Return: returns length of string
+ */
+int print_r(va_list args)
+{
+	char *str;
+	int i = 0, len = 0;
+
+	str = va_arg(args, char *);
+
+	if (!str)
+		str = ")Null(";
+
+	while (str[i])
+		i++;
+
+	for (i = i - 1; i >= 0; i--)
+	{
+		_putchar(str[i]);
+		len++;
+	}
+	return (len);
+}
