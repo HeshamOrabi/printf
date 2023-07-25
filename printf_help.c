@@ -40,12 +40,12 @@ int handelPrint(const char *format, int *index, va_list args)
 		if (format[*index] == '\0')
 			return (-1);
 
-		UnkownSpecifierLen += write(1, "%%", 1);
+		UnkownSpecifierLen += _putchar('%');
 
 		if (format[*index - 1] == ' ')
-			UnkownSpecifierLen += write(1, " ", 1);
+			UnkownSpecifierLen += _putchar(' ');
 
-		UnkownSpecifierLen += write(1, &format[*index], 1);
+		UnkownSpecifierLen += _putchar('format[*index]');
 		return (UnkownSpecifierLen);
 	}
 	return (-1);
