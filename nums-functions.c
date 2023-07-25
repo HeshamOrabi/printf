@@ -89,7 +89,7 @@ int print_p(va_list args)
 
 	n = va_arg(args, unsigned long int);
 
-	if (n == NULL)
+	if (n == 0)
 		return (write(1, "(nil)", 5));
 
 	s = &buffer[49];
