@@ -13,7 +13,7 @@ int print_int(va_list args)
 
 	if (res < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		sign = -1;
 	}
 
@@ -25,7 +25,7 @@ int print_int(va_list args)
 	while (countd > 0)
 	{
 		digit = n / countd;
-		putchar('0' + digit);
+		_putchar('0' + digit);
 		n %= countd;
 		countd /= 10;
 		len++;
