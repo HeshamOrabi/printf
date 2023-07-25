@@ -25,7 +25,7 @@ int handelPrint(const char *format, int *index, va_list args)
 {
 	m_handle conv[] = {
 		{'c', print_char}, {'s', print_str}, {'%', print_percent},
-		{'i', print_int}, {'d', print_int}, {'\0', NULL}
+		{'i', print_int}, {'d', print_int}, {'b', print_b}, {'\0', NULL}
 	};
 	int i, UnkownSpecifierLen = 0;
 
@@ -40,10 +40,10 @@ int handelPrint(const char *format, int *index, va_list args)
 		if (format[*index] == '\0')
 			return (-1);
 
-		UnkownSpecifierLen += write(1, "%%", 1);
+		UnkownSpecifierLen += _putchar('%');
 
 		if (format[*index - 1] == ' ')
-			UnkownSpecifierLen += write(1, " ", 1);
+			UnkownSpecifierLen += _putchar(' ');
 
 		UnkownSpecifierLen += write(1, &format[*index], 1);
 		return (UnkownSpecifierLen);

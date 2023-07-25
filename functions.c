@@ -35,6 +35,11 @@ int print_str(va_list args)
 	char *str;
 
 	str = va_arg(args, char *);
+	if (str == NULL)
+	{
+		str = "(null)";
+	}
+
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		_putchar(str[i]);
@@ -51,7 +56,3 @@ int print_percent(void)
 	_putchar('%');
 	return (1);
 }
-
-/**
- * print_int = prints integer number
- *
