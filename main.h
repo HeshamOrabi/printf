@@ -28,5 +28,6 @@ int print_str(va_list args);
 char *int_to_char(int num);
 int print_int(va_list args);
 int print_b(va_list args);
+int print_p(va_list args);
 
 #endif

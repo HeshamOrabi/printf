@@ -75,3 +75,32 @@ int print_b(va_list args)
 
 	return (len);
 }
+/**
+ * print_p - a function that prints address
+ * @args: an argument list
+ * Return: returns length of the address
+ */
+int print_p(va_list args)
+{
+	unsigned long int n;
+	char buffer[50];
+	char *s, *array = "0123456789abcdef";
+	int len;
+
+	n = va_arg(args, unsigned long int);
+	s = &buffer[49];
+	*s = '\0';
+
+	while (n != 0)
+	{
+		*--s = array[n % 16];
+		n /= 16;
+	}
+	*--s = 'x';
+	*--s = '0';
+
+	for (len = 0; *s; len++)
+		_putchar(*s++);
+
+	return (len);
+}
