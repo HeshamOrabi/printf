@@ -7,40 +7,27 @@
  */
 int print_int(va_list args)
 {
-	int n, tmpn, tmp;
-	int lastn, len, countd;
-
-	n = va_arg(args, int);
-	lastn = n % 10;
-	n = n / 10;
-	tmpn = n;
-	len = 1;
+	int n = va_arg(arg, int);
+	int div = 1, i = 0, x = 0;
+	unsigned int num;
 
 	if (n < 0)
 	{
-		write(1, "-", 1);
-		n = -n;
-		lastn = -lastn;
-		tmpn = -tmpn;
-		len++;
+		_putchar('-');
+		num = -n;
+		i += 1;
 	}
-	countd = 1;
-	while (tmpn / 10)
+	else
+		num = n;
+	for (; num / div >= 10; x++)
+		div *= 10;
+	for (; div != 0; i++)
 	{
-		countd = countd * 10;
-		tmpn = tmpn / 10;
+		_putchar((num / div)  + '0');
+		num %= div;
+		div /= 10;
 	}
-	tmpn = n;
-	while (tmpn > 0)
-	{
-		tmp = tmpn / countd;
-		_putchar(tmp + '0');
-		tmpn = tmpn - (tmp * countd);
-		countd /= 10;
-		len++;
-	}
-	_putchar(lastn + '0');
-	return (len);
+	return (i);
 }
 
 /**
