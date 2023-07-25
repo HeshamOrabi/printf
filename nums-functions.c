@@ -7,27 +7,31 @@
  */
 int print_int(va_list args)
 {
-	int n = va_arg(args, int);
-	int div = 1, i = 0, x = 0;
-	unsigned int num;
+	int res = va_arg(args, int);
+	int sign = 1, len = 0, countd = 1, digit;
+	unsigned int n;
 
-	if (n < 0)
+	if (res < 0)
 	{
-		_putchar('-');
-		num = -n;
-		i += 1;
+		putchar('-');
+		sign = -1;
 	}
-	else
-		num = n;
-	for (; num / div >= 10; x++)
-		div *= 10;
-	for (; div != 0; i++)
+
+	n = sign * res;
+
+	while (n / countd >= 10)
+		countd *= 10;
+
+	while (countd > 0)
 	{
-		_putchar((num / div)  + '0');
-		num %= div;
-		div /= 10;
+		digit = n / countd;
+		putchar('0' + digit);
+		n %= countd;
+		countd /= 10;
+		len++;
 	}
-	return (i);
+
+	return (len + (sign == -1));
 }
 
 /**
