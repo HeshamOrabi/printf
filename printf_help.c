@@ -45,7 +45,7 @@ int handelPrint(const char *format, int *index, va_list args)
 		if (format[*index - 1] == ' ')
 			UnkownSpecifierLen += _putchar(' ');
 
-		UnkownSpecifierLen += _putchar('format[*index]');
+		UnkownSpecifierLen += write(1, &format[*index], 1);
 		return (UnkownSpecifierLen);
 	}
 	return (-1);
