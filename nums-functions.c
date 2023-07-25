@@ -85,5 +85,11 @@ int print_b(va_list args)
 		_putchar(arr[i] + '0');
 	}
 
+	if (len == 0)
+	{
+		len++;
+		_putchar('0');
+	}
+
 	return (len);
 }
