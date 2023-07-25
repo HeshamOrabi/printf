@@ -88,6 +88,10 @@ int print_p(va_list args)
 	int len;
 
 	n = va_arg(args, unsigned long int);
+
+	if (n == NULL)
+		return (write(1, "(nil)", 5));
+
 	s = &buffer[49];
 	*s = '\0';
 
