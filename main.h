@@ -30,6 +30,6 @@ int print_int(va_list args);
 int print_b(va_list args);
 int print_p(va_list args);
 int print_r(va_list args);
-
+int print_u(void);
 
 #endif
