@@ -32,5 +32,6 @@ int print_p(va_list args);
 int print_r(va_list args);
 int print_u(void);
 int print_o(void);
+int root_13(va_list args);
 
 #endif
