@@ -12,6 +12,8 @@ int root_13(va_list args)
 	char *str;
 
 	str = va_arg(args, char *);
+	if (str == NULL)
+		str = "(AHYY)";
 
 	while (str[i] != '\0')
 	{
